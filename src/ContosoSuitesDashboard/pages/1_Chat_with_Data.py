@@ -81,6 +81,7 @@ def main():
     # Chat with Data
 
     This Streamlit dashboard is intended to show off capabilities of Azure OpenAI, including integration with AI Search.
+    THIS IS TEST
     """
     )
 
@@ -94,7 +95,7 @@ def main():
             st.markdown(message["content"])
 
     # Await a user message and handle the chat prompt when it comes in.
-    if prompt := st.chat_input("Enter a message:"):
+    if prompt := st.chat_input("Enter a message here:"):
         handle_chat_prompt(prompt)
 
 if __name__ == "__main__":
