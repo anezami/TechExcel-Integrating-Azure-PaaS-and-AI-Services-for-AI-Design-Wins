@@ -14,8 +14,9 @@ public class DatabaseService : IDatabaseService
     public async Task<IEnumerable<Hotel>> GetHotels()
     {
         var sql = "SELECT HotelID, HotelName, City, Country FROM dbo.Hotel";
+        var envVariable = Environment.GetEnvironmentVariable("SQLCONNSTR_ContosoSuites");
         using var conn = new SqlConnection(
-            connectionString: Environment.GetEnvironmentVariable("SQLCONNSTR_ContosoSuites")!
+            connectionString: envVariable!
         );
         conn.Open();
         using var cmd = new SqlCommand(sql, conn);
